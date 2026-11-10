@@ -1,0 +1,2685 @@
+
+/* =====================================================
+   MOTOFIX GARAGE - COMPLETE HEADER
+   MotoFix: Clay Beige #C3A78E
+   Garage: Black #202124
+===================================================== */
+
+/* HEADER */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    background: var(--surface-color, #FFFFFF);
+    border-bottom: 1px solid var(--border-color, #E2DED9);
+    box-shadow: 0 3px 15px rgba(32, 33, 36, 0.05);
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.header-container {
+    width: min(94%, 1380px);
+    min-height: 86px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+/* BRAND */
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+    text-decoration: none;
+}
+
+.brand-image {
+    width: 57px;
+    height: 57px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.brand-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.brand-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.brand-info h2 {
+    margin: 0;
+    color: #202124;
+    font-size: 25px;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.8px;
+    white-space: nowrap;
+}
+
+.brand-info h2 span {
+    color: #C3A78E;
+}
+
+.brand-info p {
+    margin: 5px 0 0;
+    color: #777777;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1.55px;
+    white-space: nowrap;
+}
+
+/* NAVIGATION */
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 23px;
+    height: 86px;
+}
+
+.nav-link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    height: 100%;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: var(--text-color, #202124);
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+/* Underline */
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 21px;
+    width: 0;
+    height: 3px;
+    border-radius: 10px;
+    background: #C3A78E;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #C3A78E;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link.active {
+    color: #C3A78E;
+}
+
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* HOME DROPDOWN */
+
+.nav-dropdown {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-toggle i {
+    font-size: 10px;
+    transition: transform 0.3s ease;
+}
+
+.nav-dropdown.open .dropdown-toggle i {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% - 5px);
+    left: 0;
+    min-width: 205px;
+    padding: 9px;
+    background: var(--surface-color, #FFFFFF);
+    border: 1px solid var(--border-color, #E2DED9);
+    border-top: 3px solid #C3A78E;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.25s ease;
+}
+
+.nav-dropdown:hover .dropdown-menu,
+.nav-dropdown.open .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 12px 13px;
+    border-radius: 5px;
+    color: var(--text-color, #202124);
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu a.active {
+    color: #7A4F3A;
+    background: rgba(195, 167, 142, 0.15);
+}
+
+/* HEADER RIGHT */
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    flex-shrink: 0;
+}
+
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.theme-btn,
+.direction-btn {
+    height: 39px;
+    border: 1px solid #C3A78E;
+    border-radius: 7px;
+    background: transparent;
+    color: #7A4F3A;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.theme-btn {
+    width: 39px;
+    font-size: 14px;
+}
+
+.direction-btn {
+    padding: 0 11px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.theme-btn:hover,
+.direction-btn:hover {
+    background: #C3A78E;
+    color: #202124;
+    border-color: #C3A78E;
+}
+
+/* BOOKING BUTTON */
+
+.header-book-btn {
+    min-height: 43px;
+    padding: 0 17px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: 6px;
+    background: #7A4F3A;
+    border: 1px solid #7A4F3A;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+.header-book-btn:hover {
+    background: #633D2D;
+    border-color: #633D2D;
+    color: #FFFFFF;
+    transform: translateY(-2px);
+}
+
+/* MOBILE MENU BUTTON */
+
+.menu-toggle {
+    display: none;
+    width: 42px;
+    height: 42px;
+    border: 1px solid #C3A78E;
+    border-radius: 7px;
+    background: transparent;
+    color: #7A4F3A;
+    font-size: 19px;
+    cursor: pointer;
+}
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+html.dark-mode .site-header {
+    background: #202124;
+    border-bottom-color: #3C3D40;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+}
+
+html.dark-mode .brand-info h2 {
+    color: #FFFFFF;
+}
+
+html.dark-mode .brand-info h2 span {
+    color: #C3A78E;
+}
+
+html.dark-mode .brand-info p {
+    color: #B8B8BC;
+}
+
+html.dark-mode .nav-link {
+    color: #F5F5F5;
+}
+
+html.dark-mode .nav-link:hover,
+html.dark-mode .nav-link.active {
+    color: #C3A78E;
+}
+
+html.dark-mode .nav-link::after {
+    background: #C3A78E;
+}
+
+html.dark-mode .dropdown-menu {
+    background: #202124;
+    border-color: #3C3D40;
+    border-top-color: #C3A78E;
+}
+
+html.dark-mode .dropdown-menu a {
+    color: #F5F5F5;
+}
+
+html.dark-mode .dropdown-menu a:hover,
+html.dark-mode .dropdown-menu a.active {
+    color: #C3A78E;
+    background: #292A2D;
+}
+
+html.dark-mode .theme-btn,
+html.dark-mode .direction-btn,
+html.dark-mode .menu-toggle {
+    color: #C3A78E;
+    border-color: #C3A78E;
+}
+
+html.dark-mode .theme-btn:hover,
+html.dark-mode .direction-btn:hover,
+html.dark-mode .menu-toggle:hover {
+    background: #C3A78E;
+    color: #202124;
+}
+
+/* =====================================================
+   RTL
+===================================================== */
+
+html[dir="rtl"] .brand-logo {
+    flex-direction: row;
+}
+
+html[dir="rtl"] .nav-link::after {
+    left: auto;
+    right: 0;
+}
+
+html[dir="rtl"] .dropdown-menu {
+    left: auto;
+    right: 0;
+}
+
+/* =====================================================
+   RESPONSIVE - LAPTOP
+===================================================== */
+
+@media (max-width: 1200px) {
+    .header-container {
+        gap: 16px;
+    }
+
+    .main-nav {
+        gap: 15px;
+    }
+
+    .brand-image {
+        width: 50px;
+        height: 50px;
+    }
+
+    .brand-info h2 {
+        font-size: 22px;
+    }
+
+    .header-right {
+        gap: 9px;
+    }
+
+    .header-book-btn {
+        padding: 0 12px;
+        font-size: 11px;
+    }
+}
+
+/* =====================================================
+   RESPONSIVE - TABLET AND MOBILE
+===================================================== */
+
+@media (max-width: 950px) {
+    .header-container {
+        min-height: 76px;
+        flex-wrap: wrap;
+        position: relative;
+    }
+
+    .brand-image {
+        width: 49px;
+        height: 49px;
+    }
+
+    .brand-info h2 {
+        font-size: 22px;
+    }
+
+    .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-inline-start: auto;
+    }
+
+    .main-nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        height: auto;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 12px 20px;
+        background: var(--surface-color, #FFFFFF);
+        border: 1px solid var(--border-color, #E2DED9);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .main-nav.open {
+        display: flex;
+    }
+
+    .nav-dropdown {
+        height: auto;
+        display: block;
+    }
+
+    .nav-link {
+        width: 100%;
+        min-height: 45px;
+        height: auto;
+        justify-content: flex-start;
+        padding: 10px 0;
+    }
+
+    .nav-link::after {
+        bottom: 4px;
+    }
+
+    .dropdown-menu {
+        position: static;
+        display: none;
+        width: 100%;
+        min-width: 0;
+        margin: 5px 0 10px;
+        padding: 5px 10px;
+        border: 1px solid var(--border-color, #E2DED9);
+        border-top: 2px solid #C3A78E;
+        border-radius: 7px;
+        box-shadow: none;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+    }
+
+    .nav-dropdown.open .dropdown-menu {
+        display: block;
+    }
+
+    .header-right {
+        width: 100%;
+        justify-content: flex-end;
+        padding: 0 0 12px;
+    }
+
+    .header-book-btn {
+        min-height: 39px;
+    }
+
+    html.dark-mode .main-nav {
+        background: #202124;
+        border-color: #3C3D40;
+    }
+}
+
+/* =====================================================
+   RESPONSIVE - SMALL MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+    .header-container {
+        width: 92%;
+        min-height: 70px;
+        gap: 10px;
+    }
+
+    .brand-logo {
+        gap: 8px;
+    }
+
+    .brand-image {
+        width: 42px;
+        height: 42px;
+    }
+
+    .brand-info h2 {
+        font-size: 19px;
+    }
+
+    .brand-info p {
+        font-size: 7px;
+        letter-spacing: 1px;
+    }
+
+    .menu-toggle {
+        width: 37px;
+        height: 37px;
+    }
+
+    .header-right {
+        justify-content: space-between;
+        gap: 8px;
+    }
+
+    .header-controls {
+        gap: 6px;
+    }
+
+    .theme-btn {
+        width: 36px;
+        height: 36px;
+    }
+
+    .direction-btn {
+        height: 36px;
+        padding: 0 9px;
+    }
+
+    .header-book-btn {
+        min-height: 37px;
+        padding: 0 10px;
+        font-size: 10px;
+    }
+}
+/* =====================================
+   SECTION 1 - PRICING HERO
+   MOTOFIX GARAGE
+===================================== */
+
+.pricing-hero {
+    position: relative;
+    min-height: 460px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    background-image: url("images/image-27.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Background Overlay */
+
+.pricing-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(21, 22, 24, 0.78);
+}
+
+/* Hero Content */
+
+.pricing-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 85px 20px;
+    text-align: center;
+}
+
+/* Subtitle */
+
+.pricing-hero-subtitle {
+    display: inline-block;
+    color: #C3A78E;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+}
+
+/* Heading */
+
+.pricing-hero-content h1 {
+    color: #FFFFFF;
+    font-size: 46px;
+    line-height: 1.3;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.pricing-hero-content h1 span {
+    display: block;
+    color: #C3A78E;
+}
+
+/* Description */
+
+.pricing-hero-content > p {
+    max-width: 620px;
+    margin: 0 auto 28px;
+    color: #E0E0E0;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+/* Breadcrumb */
+
+.pricing-breadcrumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: #FFFFFF;
+    font-size: 14px;
+}
+
+.pricing-breadcrumb a {
+    color: #C3A78E;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.pricing-breadcrumb a:hover {
+    color: #FFFFFF;
+}
+
+.pricing-breadcrumb i {
+    font-size: 11px;
+    color: #AAAAAA;
+}
+
+.pricing-breadcrumb span {
+    color: #FFFFFF;
+}
+
+/* =====================================
+   DARK MODE
+===================================== */
+
+html.dark-mode .pricing-hero-overlay {
+    background: rgba(15, 16, 18, 0.84);
+}
+
+/* =====================================
+   RTL SUPPORT
+===================================== */
+
+html[dir="rtl"] .pricing-hero-content {
+    direction: rtl;
+}
+
+html[dir="rtl"] .pricing-breadcrumb {
+    flex-direction: row-reverse;
+}
+
+/* =====================================
+   RESPONSIVE DESIGN
+===================================== */
+
+@media (max-width: 992px) {
+
+    .pricing-hero {
+        min-height: 420px;
+    }
+
+    .pricing-hero-content h1 {
+        font-size: 40px;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .pricing-hero {
+        min-height: 380px;
+    }
+
+    .pricing-hero-content {
+        padding: 65px 20px;
+    }
+
+    .pricing-hero-content h1 {
+        font-size: 34px;
+    }
+
+}
+
+@media (max-width: 576px) {
+
+    .pricing-hero {
+        min-height: 350px;
+    }
+
+    .pricing-hero-content h1 {
+        font-size: 29px;
+    }
+
+    .pricing-hero-content > p {
+        font-size: 14px;
+    }
+
+    .pricing-hero-subtitle {
+        font-size: 12px;
+    }
+
+}
+
+
+/* ==========================================
+   SECTION 2: SERVICE PRICING PLANS
+   MotoFix Garage
+========================================== */
+
+.pricing-plans-section {
+    padding: 90px 6%;
+    background: var(--bg-color, #F5F6F7);
+}
+
+.pricing-container {
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+/* Section Heading */
+
+.pricing-section-heading {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 55px;
+}
+
+.section-tag {
+    display: inline-block;
+    color: var(--secondary-color, #7A4F3A);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.pricing-section-heading h2 {
+    color: var(--heading-color, #202124);
+    font-size: clamp(28px, 4vw, 40px);
+    line-height: 1.25;
+    margin-bottom: 16px;
+}
+
+.pricing-section-heading p {
+    color: var(--text-color, #666);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* Pricing Grid */
+
+.pricing-plans-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    align-items: stretch;
+}
+
+/* Pricing Card */
+
+.pricing-plan-card {
+    position: relative;
+    background: var(--card-bg, #FFFFFF);
+    border: 1px solid rgba(195, 167, 142, 0.35);
+    border-radius: 16px;
+    padding: 38px 30px;
+    display: flex;
+    flex-direction: column;
+    transition: 0.35s ease;
+    box-shadow: 0 8px 30px rgba(32, 33, 36, 0.05);
+}
+
+.pricing-plan-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--secondary-color, #7A4F3A);
+    box-shadow: 0 18px 40px rgba(32, 33, 36, 0.12);
+}
+
+/* Plan Icon */
+
+.plan-icon {
+    width: 58px;
+    height: 58px;
+    background: rgba(195, 167, 142, 0.20);
+    color: var(--secondary-color, #7A4F3A);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 23px;
+    margin-bottom: 23px;
+}
+
+.pricing-plan-card h3 {
+    font-size: 23px;
+    color: var(--heading-color, #202124);
+    margin-bottom: 12px;
+}
+
+.plan-description {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text-color, #666);
+    min-height: 48px;
+}
+
+/* Price */
+
+.plan-price {
+    display: flex;
+    align-items: baseline;
+    gap: 3px;
+    margin: 25px 0;
+    color: var(--heading-color, #202124);
+}
+
+.currency {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.amount {
+    font-size: 39px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.price-period {
+    font-size: 13px;
+    color: var(--text-color, #777);
+}
+
+/* Divider */
+
+.plan-divider {
+    height: 1px;
+    background: var(--border-color, #E5E5E5);
+    margin-bottom: 24px;
+}
+
+.pricing-plan-card h4 {
+    font-size: 15px;
+    color: var(--heading-color, #202124);
+    margin-bottom: 20px;
+}
+
+/* Features */
+
+.plan-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+}
+
+.plan-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    color: var(--text-color, #555);
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.plan-features li i {
+    color: var(--secondary-color, #7A4F3A);
+    font-size: 13px;
+    margin-top: 3px;
+}
+
+/* Plan Button */
+
+.plan-btn {
+    margin-top: auto;
+    width: 100%;
+    min-height: 49px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border: 1.5px solid var(--secondary-color, #7A4F3A);
+    border-radius: 7px;
+    color: var(--secondary-color, #7A4F3A);
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.plan-btn:hover {
+    background: var(--secondary-color, #7A4F3A);
+    color: #FFFFFF;
+}
+
+/* Popular Plan */
+
+.popular-plan {
+    border: 2px solid var(--secondary-color, #7A4F3A);
+    transform: translateY(-12px);
+}
+
+.popular-plan:hover {
+    transform: translateY(-20px);
+}
+
+.popular-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--secondary-color, #7A4F3A);
+    color: #FFFFFF;
+    padding: 8px 22px;
+    border-radius: 30px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+/* Bottom Note */
+
+.pricing-bottom-note {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 42px;
+    color: var(--text-color, #666);
+    font-size: 13px;
+    text-align: center;
+}
+
+.pricing-bottom-note i {
+    color: var(--secondary-color, #7A4F3A);
+    font-size: 17px;
+    flex-shrink: 0;
+}
+
+/* Responsive */
+
+@media (max-width: 992px) {
+    .pricing-plans-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .popular-plan {
+        transform: none;
+    }
+
+    .popular-plan:hover {
+        transform: translateY(-10px);
+    }
+}
+
+@media (max-width: 650px) {
+    .pricing-plans-section {
+        padding: 65px 5%;
+    }
+
+    .pricing-plans-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .pricing-plan-card {
+        padding: 32px 25px;
+    }
+
+    .popular-plan {
+        transform: none;
+    }
+
+    .pricing-bottom-note {
+        align-items: flex-start;
+        text-align: left;
+        line-height: 1.6;
+    }
+}
+
+
+
+/* ==========================================
+   SECTION 2: PRICING PLANS - DARK MODE FIX
+   MotoFix Garage
+========================================== */
+
+html.dark-mode .pricing-plans-section {
+    background: #151618;
+}
+
+/* Pricing Cards */
+
+html.dark-mode .pricing-plan-card {
+    background: #202124;
+    border: 1px solid #393A3D;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+html.dark-mode .pricing-plan-card:hover {
+    border-color: #7A4F3A;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Popular Card */
+
+html.dark-mode .pricing-plan-card.popular-plan {
+    background: #202124;
+    border: 2px solid #7A4F3A;
+}
+
+html.dark-mode .pricing-plan-card.popular-plan:hover {
+    border-color: #C3A78E;
+}
+
+/* Section Heading */
+
+html.dark-mode .pricing-section-heading h2 {
+    color: #F5F6F7;
+}
+
+html.dark-mode .pricing-section-heading p {
+    color: #BDBDBD;
+}
+
+html.dark-mode .pricing-section-heading .section-tag {
+    color: #C3A78E;
+}
+
+/* Plan Icon */
+
+html.dark-mode .plan-icon {
+    background: rgba(195, 167, 142, 0.16);
+    color: #C3A78E;
+}
+
+/* Plan Titles */
+
+html.dark-mode .pricing-plan-card h3,
+html.dark-mode .pricing-plan-card h4 {
+    color: #F5F6F7;
+}
+
+/* Description */
+
+html.dark-mode .plan-description {
+    color: #BDBDBD;
+}
+
+/* Price */
+
+html.dark-mode .plan-price {
+    color: #C3A78E;
+}
+
+html.dark-mode .price-period {
+    color: #BDBDBD;
+}
+
+/* Divider */
+
+html.dark-mode .plan-divider {
+    background: #393A3D;
+}
+
+/* Features */
+
+html.dark-mode .plan-features li {
+    color: #D5D5D5;
+}
+
+html.dark-mode .plan-features li i {
+    color: #C3A78E;
+}
+
+/* Popular Badge */
+
+html.dark-mode .popular-badge {
+    background: #7A4F3A;
+    color: #FFFFFF;
+}
+
+/* Buttons */
+
+html.dark-mode .plan-btn {
+    background: transparent;
+    color: #C3A78E;
+    border-color: #7A4F3A;
+}
+
+html.dark-mode .plan-btn:hover {
+    background: #7A4F3A;
+    border-color: #7A4F3A;
+    color: #FFFFFF;
+}
+
+/* Bottom Note */
+
+html.dark-mode .pricing-bottom-note {
+    color: #BDBDBD;
+}
+
+html.dark-mode .pricing-bottom-note i {
+    color: #C3A78E;
+}
+
+/* RTL Support */
+
+html[dir="rtl"] .popular-badge {
+    left: 50%;
+    right: auto;
+}
+
+/* ==========================================
+   SECTION 3: SERVICE PLAN COMPARISON
+   MotoFix Garage
+========================================== */
+
+.service-comparison-section {
+    padding: 90px 6%;
+    background: var(--card-bg, #FFFFFF);
+}
+
+.comparison-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Heading */
+
+.comparison-heading {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px;
+}
+
+.comparison-heading h2 {
+    font-size: clamp(27px, 4vw, 38px);
+    color: var(--heading-color, #202124);
+    margin-bottom: 15px;
+}
+
+.comparison-heading p {
+    color: var(--text-color, #666);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* Table Wrapper */
+
+.comparison-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid var(--border-color, #E5E5E5);
+    border-radius: 14px;
+    box-shadow: 0 8px 30px rgba(32, 33, 36, 0.05);
+}
+
+/* Table */
+
+.comparison-table {
+    width: 100%;
+    min-width: 650px;
+    border-collapse: collapse;
+    text-align: center;
+    background: var(--card-bg, #FFFFFF);
+}
+
+.comparison-table th {
+    background: var(--heading-color, #202124);
+    color: #FFFFFF;
+    padding: 23px 18px;
+    font-size: 15px;
+    font-weight: 700;
+    position: relative;
+}
+
+.comparison-table th:first-child {
+    text-align: left;
+    padding-left: 30px;
+}
+
+.comparison-table td {
+    padding: 19px 18px;
+    color: var(--text-color, #555);
+    font-size: 14px;
+    border-bottom: 1px solid var(--border-color, #E8E8E8);
+}
+
+.comparison-table td:first-child {
+    text-align: left;
+    font-weight: 600;
+    color: var(--heading-color, #202124);
+    padding-left: 30px;
+}
+
+.comparison-table tbody tr {
+    transition: background 0.25s ease;
+}
+
+.comparison-table tbody tr:hover {
+    background: rgba(195, 167, 142, 0.10);
+}
+
+.comparison-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Featured Column */
+
+.comparison-table .featured-column {
+    background: rgba(195, 167, 142, 0.13);
+}
+
+.comparison-table th.featured-column {
+    background: var(--secondary-color, #7A4F3A);
+    color: #FFFFFF;
+}
+
+.featured-column span {
+    display: block;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    margin-top: 7px;
+    color: #F2D8C4;
+}
+
+/* Check Icons */
+
+.comparison-table td i {
+    color: var(--secondary-color, #7A4F3A);
+    font-size: 15px;
+}
+
+.comparison-table td i.unavailable {
+    color: #999999;
+    opacity: 0.65;
+}
+
+/* Bottom CTA */
+
+.comparison-bottom {
+    margin-top: 40px;
+    padding: 30px 35px;
+    background: rgba(195, 167, 142, 0.16);
+    border: 1px solid rgba(195, 167, 142, 0.35);
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+}
+
+.comparison-bottom h3 {
+    font-size: 20px;
+    color: var(--heading-color, #202124);
+    margin-bottom: 8px;
+}
+
+.comparison-bottom p {
+    font-size: 14px;
+    color: var(--text-color, #666);
+    line-height: 1.6;
+}
+
+.comparison-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 23px;
+    background: var(--secondary-color, #7A4F3A);
+    color: #FFFFFF;
+    border: 1px solid var(--secondary-color, #7A4F3A);
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: 0.3s ease;
+}
+
+.comparison-btn:hover {
+    background: var(--primary-color, #C3A78E);
+    border-color: var(--primary-color, #C3A78E);
+    color: #202124;
+}
+
+/* RTL */
+
+html[dir="rtl"] .comparison-table th:first-child,
+html[dir="rtl"] .comparison-table td:first-child {
+    text-align: right;
+    padding-left: 18px;
+    padding-right: 30px;
+}
+
+html[dir="rtl"] .comparison-btn i {
+    transform: rotate(180deg);
+}
+
+/* Dark Mode */
+
+html.dark-mode .service-comparison-section {
+    background: #151618;
+}
+
+html.dark-mode .comparison-table-wrapper,
+html.dark-mode .comparison-table {
+    background: #202124;
+    border-color: #393A3D;
+}
+
+html.dark-mode .comparison-table th {
+    background: #292A2D;
+}
+
+html.dark-mode .comparison-table th.featured-column {
+    background: #7A4F3A;
+}
+
+html.dark-mode .comparison-table td {
+    color: #D5D5D5;
+    border-color: #393A3D;
+}
+
+html.dark-mode .comparison-table td:first-child {
+    color: #F5F6F7;
+}
+
+html.dark-mode .comparison-table .featured-column {
+    background: rgba(195, 167, 142, 0.12);
+}
+
+html.dark-mode .comparison-table tbody tr:hover {
+    background: rgba(195, 167, 142, 0.10);
+}
+
+html.dark-mode .comparison-bottom {
+    background: #202124;
+    border-color: #7A4F3A;
+}
+
+html.dark-mode .comparison-bottom h3 {
+    color: #F5F6F7;
+}
+
+html.dark-mode .comparison-bottom p {
+    color: #BDBDBD;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+    .service-comparison-section {
+        padding: 65px 5%;
+    }
+
+    .comparison-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 25px;
+    }
+
+    .comparison-btn {
+        width: 100%;
+    }
+}
+
+/* ==========================================
+   SECTION 4: WHY CHOOSE MOTOFIX GARAGE
+========================================== */
+
+.why-choose-section {
+    padding: 90px 6%;
+    background: var(--bg-color, #F5F6F7);
+}
+
+.why-choose-container {
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+/* Heading */
+
+.why-choose-heading {
+    max-width: 700px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.why-choose-heading h2 {
+    color: var(--heading-color, #202124);
+    font-size: clamp(28px, 4vw, 40px);
+    margin-bottom: 16px;
+    line-height: 1.3;
+}
+
+.why-choose-heading p {
+    color: var(--text-color, #666);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* Grid */
+
+.why-choose-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 23px;
+}
+
+/* Cards */
+
+.why-card {
+    position: relative;
+    overflow: hidden;
+    background: var(--card-bg, #FFFFFF);
+    border: 1px solid rgba(195, 167, 142, 0.35);
+    border-radius: 13px;
+    padding: 35px 25px;
+    min-height: 265px;
+    transition: all 0.35s ease;
+}
+
+.why-card:hover {
+    transform: translateY(-9px);
+    border-color: var(--secondary-color, #7A4F3A);
+    box-shadow: 0 15px 35px rgba(32, 33, 36, 0.09);
+}
+
+/* Icon */
+
+.why-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 13px;
+    background: rgba(195, 167, 142, 0.20);
+    color: var(--secondary-color, #7A4F3A);
+    font-size: 24px;
+    margin-bottom: 25px;
+    transition: all 0.35s ease;
+}
+
+.why-card:hover .why-icon {
+    background: var(--secondary-color, #7A4F3A);
+    color: #FFFFFF;
+    transform: rotate(-5deg);
+}
+
+/* Card Content */
+
+.why-card h3 {
+    color: var(--heading-color, #202124);
+    font-size: 19px;
+    margin-bottom: 13px;
+}
+
+.why-card p {
+    color: var(--text-color, #666);
+    font-size: 13px;
+    line-height: 1.8;
+    position: relative;
+    z-index: 1;
+}
+
+/* Decorative Number */
+
+.why-number {
+    position: absolute;
+    right: 17px;
+    bottom: 5px;
+    font-size: 65px;
+    font-weight: 800;
+    color: rgba(195, 167, 142, 0.13);
+    line-height: 1;
+    pointer-events: none;
+    transition: 0.35s ease;
+}
+
+.why-card:hover .why-number {
+    color: rgba(122, 79, 58, 0.16);
+}
+
+/* RTL */
+
+html[dir="rtl"] .why-number {
+    right: auto;
+    left: 17px;
+}
+
+/* Dark Mode */
+
+html.dark-mode .why-choose-section {
+    background: #151618;
+}
+
+html.dark-mode .why-card {
+    background: #202124;
+    border-color: #393A3D;
+}
+
+html.dark-mode .why-card:hover {
+    border-color: #7A4F3A;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+html.dark-mode .why-icon {
+    background: rgba(195, 167, 142, 0.17);
+    color: #C3A78E;
+}
+
+html.dark-mode .why-card:hover .why-icon {
+    background: #7A4F3A;
+    color: #FFFFFF;
+}
+
+html.dark-mode .why-number {
+    color: rgba(195, 167, 142, 0.12);
+}
+
+html.dark-mode .why-card:hover .why-number {
+    color: rgba(195, 167, 142, 0.22);
+}
+
+/* Responsive */
+
+@media (max-width: 1050px) {
+    .why-choose-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .why-choose-section {
+        padding: 65px 5%;
+    }
+
+    .why-choose-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .why-card {
+        min-height: auto;
+        padding: 30px 25px;
+    }
+}
+
+
+
+/* ==========================================
+   SECTION 5: PRICING FAQ
+   MotoFix Garage
+========================================== */
+
+.pricing-faq-section {
+    padding: 90px 6%;
+    background: var(--bg-color, #F5F6F7);
+}
+
+.pricing-faq-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Heading */
+
+.pricing-faq-heading {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 55px;
+}
+
+.pricing-faq-heading h2 {
+    color: var(--heading-color, #202124);
+    font-size: clamp(28px, 4vw, 40px);
+    margin-bottom: 15px;
+}
+
+.pricing-faq-heading p {
+    color: var(--text-color, #666);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* FAQ Layout */
+
+.pricing-faq-layout {
+    display: grid;
+    grid-template-columns: 0.8fr 1.5fr;
+    gap: 55px;
+    align-items: start;
+}
+
+/* Left Content */
+
+.faq-side-content {
+    background: #202124;
+    padding: 40px 32px;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.faq-side-content::after {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border: 30px solid rgba(195, 167, 142, 0.12);
+    border-radius: 50%;
+    right: -75px;
+    bottom: -90px;
+    pointer-events: none;
+}
+
+.faq-side-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(195, 167, 142, 0.18);
+    color: #C3A78E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 13px;
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+.faq-side-content h3 {
+    color: #F5F6F7;
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+
+.faq-side-content p {
+    color: #C5C5C5;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+/* Contact Button */
+
+.faq-contact-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 13px 20px;
+    background: #7A4F3A;
+    color: #FFFFFF;
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.faq-contact-btn:hover {
+    background: #C3A78E;
+    color: #202124;
+}
+
+/* FAQ Items */
+
+.faq-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.faq-item {
+    background: var(--card-bg, #FFFFFF);
+    border: 1px solid rgba(195, 167, 142, 0.35);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.3s ease;
+}
+
+.faq-item:hover,
+.faq-item.active {
+    border-color: #7A4F3A;
+}
+
+/* Question */
+
+.faq-question {
+    width: 100%;
+    min-height: 68px;
+    padding: 20px 23px;
+    background: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    text-align: left;
+    cursor: pointer;
+    color: var(--heading-color, #202124);
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.faq-question i {
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    border-radius: 50%;
+    background: rgba(195, 167, 142, 0.20);
+    color: #7A4F3A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    transition: 0.3s ease;
+}
+
+.faq-item.active .faq-question i {
+    background: #7A4F3A;
+    color: #FFFFFF;
+    transform: rotate(45deg);
+}
+
+/* Answer */
+
+.faq-answer {
+    display: none;
+    padding: 0 23px 22px;
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+    animation: faqFadeIn 0.3s ease;
+}
+
+.faq-answer p {
+    color: var(--text-color, #666);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+@keyframes faqFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-7px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================
+   DARK MODE
+========================================== */
+
+html.dark-mode .pricing-faq-section {
+    background: #151618;
+}
+
+html.dark-mode .pricing-faq-heading h2 {
+    color: #F5F6F7;
+}
+
+html.dark-mode .pricing-faq-heading p {
+    color: #BDBDBD;
+}
+
+html.dark-mode .faq-side-content {
+    background: #202124;
+    border: 1px solid #393A3D;
+}
+
+html.dark-mode .faq-side-icon {
+    background: rgba(195, 167, 142, 0.16);
+    color: #C3A78E;
+}
+
+html.dark-mode .faq-side-content h3 {
+    color: #F5F6F7;
+}
+
+html.dark-mode .faq-side-content p {
+    color: #BDBDBD;
+}
+
+html.dark-mode .faq-item {
+    background: #202124;
+    border-color: #393A3D;
+}
+
+html.dark-mode .faq-item:hover,
+html.dark-mode .faq-item.active {
+    border-color: #7A4F3A;
+}
+
+html.dark-mode .faq-question {
+    color: #F5F6F7;
+}
+
+html.dark-mode .faq-question i {
+    background: rgba(195, 167, 142, 0.16);
+    color: #C3A78E;
+}
+
+html.dark-mode .faq-item.active .faq-question i {
+    background: #7A4F3A;
+    color: #FFFFFF;
+}
+
+html.dark-mode .faq-answer p {
+    color: #BDBDBD;
+}
+
+/* ==========================================
+   RTL SUPPORT
+========================================== */
+
+html[dir="rtl"] .faq-question {
+    text-align: right;
+}
+
+html[dir="rtl"] .faq-side-content::after {
+    right: auto;
+    left: -75px;
+}
+
+html[dir="rtl"] .faq-contact-btn i {
+    transform: rotate(180deg);
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 900px) {
+    .pricing-faq-layout {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .faq-side-content {
+        padding: 32px;
+    }
+}
+
+@media (max-width: 600px) {
+    .pricing-faq-section {
+        padding: 65px 5%;
+    }
+
+    .pricing-faq-heading {
+        margin-bottom: 35px;
+    }
+
+    .faq-question {
+        padding: 18px;
+        font-size: 14px;
+    }
+
+    .faq-answer {
+        padding: 0 18px 20px;
+    }
+}
+
+/* ==========================================
+   SECTION 6: FINAL PRICING CTA
+   MotoFix Garage
+========================================== */
+
+.pricing-cta-section {
+    position: relative;
+    min-height: 430px;
+    padding: 30px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+        url("images/image-28.jpg")
+        center 55% / cover no-repeat;
+    overflow: hidden;
+}
+
+/* Dark Overlay */
+
+.pricing-cta-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(21, 22, 24, 0.96) 0%,
+        rgba(21, 22, 24, 0.82) 55%,
+        rgba(21, 22, 24, 0.55) 100%
+    );
+}
+
+/* Content */
+
+.pricing-cta-container {
+    position: relative;
+    z-index: 2;
+    max-width: 850px;
+    text-align: center;
+}
+
+/* Tag */
+
+.pricing-cta-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: #C3A78E;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 22px;
+}
+
+.pricing-cta-tag i {
+    font-size: 17px;
+}
+
+/* Heading */
+
+.pricing-cta-container h2 {
+    color: #FFFFFF;
+    font-size: clamp(30px, 5vw, 48px);
+    line-height: 1.25;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.pricing-cta-container h2 span {
+    color: #C3A78E;
+}
+
+/* Description */
+
+.pricing-cta-container p {
+    max-width: 650px;
+    margin: 0 auto;
+    color: #D5D5D5;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+/* Buttons */
+
+.pricing-cta-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-top: 35px;
+    flex-wrap: wrap;
+}
+
+.pricing-cta-primary,
+.pricing-cta-secondary {
+    min-height: 52px;
+    padding: 0 27px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 11px;
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Primary Button */
+
+.pricing-cta-primary {
+    background: #7A4F3A;
+    border: 1px solid #7A4F3A;
+    color: #FFFFFF;
+}
+
+.pricing-cta-primary:hover {
+    background: #C3A78E;
+    border-color: #C3A78E;
+    color: #202124;
+    transform: translateY(-4px);
+}
+
+/* Secondary Button */
+
+.pricing-cta-secondary {
+    background: transparent;
+    border: 1px solid #C3A78E;
+    color: #FFFFFF;
+}
+
+.pricing-cta-secondary:hover {
+    background: #C3A78E;
+    color: #202124;
+    transform: translateY(-4px);
+}
+
+/* RTL */
+
+html[dir="rtl"] .pricing-cta-overlay {
+    background: linear-gradient(
+        270deg,
+        rgba(21, 22, 24, 0.96) 0%,
+        rgba(21, 22, 24, 0.82) 55%,
+        rgba(21, 22, 24, 0.55) 100%
+    );
+}
+
+html[dir="rtl"] .pricing-cta-primary i {
+    transform: rotate(180deg);
+}
+
+/* Dark Mode */
+
+html.dark-mode .pricing-cta-section {
+    background-color: #151618;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+
+    .pricing-cta-section {
+        min-height: 400px;
+        padding: 75px 5%;
+        background-position: center;
+    }
+
+    .pricing-cta-container h2 {
+        font-size: 32px;
+    }
+
+    .pricing-cta-container p {
+        font-size: 14px;
+    }
+
+    .pricing-cta-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .pricing-cta-primary,
+    .pricing-cta-secondary {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 400px) {
+
+    .pricing-cta-container h2 {
+        font-size: 27px;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* FOOTER MAIN */
+
+.site-footer {
+    width: 100%;
+    background: #C3A78E;
+    color: #202124;
+    overflow: hidden;
+}
+
+.footer-main {
+    padding: 15px 0 65px;
+}
+
+.footer-container {
+    width: min(1200px, calc(100% - 60px));
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1.5fr 0.9fr 1fr 1.25fr;
+    gap: 55px;
+
+    align-items: start;
+}
+
+/* BRAND */
+
+.footer-brand {
+    max-width: 340px;
+}
+
+.footer-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    margin-bottom: 22px;
+}
+
+.footer-logo img {
+    width: 58px;
+    height: 58px;
+    object-fit: contain;
+}
+
+.footer-logo span {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.15;
+}
+
+.footer-logo strong {
+    font-size: 27px;
+    font-weight: 800;
+    color: #7A4F3A;
+    letter-spacing: -0.8px;
+}
+
+.footer-logo b {
+    font-size: 17px;
+    font-weight: 700;
+    color: #202124;
+    letter-spacing: 2px;
+}
+
+.footer-about {
+    font-size: 14px;
+    line-height: 1.9;
+    color: #202124;
+    margin: 0 0 25px;
+    max-width: 330px;
+}
+
+/* SOCIAL ICONS */
+
+.footer-socials {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+.footer-socials a {
+    width: 39px;
+    height: 39px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #202124;
+    color: #C3A78E;
+
+    border-radius: 7px;
+    font-size: 15px;
+
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-socials a:hover {
+    background: #7A4F3A;
+    color: #FFFFFF;
+    transform: translateY(-4px);
+}
+
+/* COLUMN HEADINGS */
+
+.footer-title {
+    position: relative;
+    display: inline-block;
+
+    font-size: 18px;
+    font-weight: 800;
+    color: #202124;
+
+    margin: 8px 0 30px;
+    padding-bottom: 13px;
+}
+
+.footer-title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 42px;
+    height: 3px;
+
+    background: #7A4F3A;
+    border-radius: 5px;
+}
+
+/* QUICK LINKS AND SERVICES */
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footer-links li {
+    margin: 0;
+    padding: 0;
+}
+
+.footer-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    color: #202124;
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    transition: all 0.3s ease;
+}
+
+.footer-links a::before {
+    content: "\f105";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: #7A4F3A;
+    font-size: 13px;
+
+    transition: transform 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #7A4F3A;
+    transform: translateX(4px);
+}
+
+.footer-links a:hover::before {
+    transform: translateX(3px);
+}
+
+
+/* CONTACT INFORMATION */
+
+.footer-contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footer-contact-list li {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #202124;
+}
+
+.contact-icon {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #7A4F3A;
+    color: #FFFFFF;
+
+    border: 1px solid #7A4F3A;
+    border-radius: 8px;
+
+    font-size: 16px;
+}
+
+.contact-icon i {
+    display: inline-block;
+    color: inherit;
+    font-size: 16px;
+    line-height: 1;
+}
+
+.footer-contact-list a {
+    color: #202124;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+}
+
+.footer-contact-list a:hover {
+    color: #7A4F3A;
+}
+
+/* DARK MODE */
+
+html.dark-mode .footer-contact-list li {
+    color: #F5F5F5;
+}
+
+html.dark-mode .contact-icon {
+    background: #C3A78E;
+    border-color: #C3A78E;
+    color: #202124;
+}
+
+html.dark-mode .contact-icon i {
+    color: #202124;
+}
+
+html.dark-mode .footer-contact-list a {
+    color: #F5F5F5;
+}
+
+html.dark-mode .footer-contact-list a:hover {
+    color: #C3A78E;
+}
+
+/* FOOTER BOTTOM */
+
+.footer-bottom {
+    background: #202124;
+    padding: 22px 0;
+}
+
+.footer-bottom-container {
+    width: min(1200px, calc(100% - 60px));
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 13px;
+    color: #F5F5F5;
+    line-height: 1.7;
+}
+
+.footer-bottom p strong {
+    color: #C3A78E;
+}
+
+.footer-bottom-links {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-bottom-links a {
+    font-size: 13px;
+    color: #F5F5F5;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-bottom-links a:hover {
+    color: #C3A78E;
+}
+
+.footer-bottom-links span {
+    width: 1px;
+    height: 14px;
+    background: #777777;
+}
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+html.dark-mode .site-footer {
+    background: #242321;
+    color: #F5F5F5;
+}
+
+html.dark-mode .footer-logo strong {
+    color: #C3A78E;
+}
+
+html.dark-mode .footer-logo b,
+html.dark-mode .footer-title,
+html.dark-mode .footer-about,
+html.dark-mode .footer-links a,
+html.dark-mode .footer-contact-list li,
+html.dark-mode .footer-contact-list a {
+    color: #F5F5F5;
+}
+
+html.dark-mode .footer-links a:hover,
+html.dark-mode .footer-contact-list a:hover {
+    color: #C3A78E;
+}
+
+html.dark-mode .footer-socials a {
+    background: #C3A78E;
+    color: #202124;
+}
+
+html.dark-mode .footer-socials a:hover {
+    background: #7A4F3A;
+    color: #FFFFFF;
+}
+
+html.dark-mode .footer-title::after {
+    background: #C3A78E;
+}
+
+html.dark-mode .footer-links a::before {
+    color: #C3A78E;
+}
+
+html.dark-mode .contact-icon {
+    background: #C3A78E;
+    color: #202124;
+}
+
+html.dark-mode .footer-bottom {
+    background: #151618;
+}
+
+/* =====================================================
+   RTL SUPPORT
+===================================================== */
+
+html[dir="rtl"] .footer-title::after {
+    left: auto;
+    right: 0;
+}
+
+html[dir="rtl"] .footer-links a:hover {
+    transform: translateX(-4px);
+}
+
+html[dir="rtl"] .footer-links a::before {
+    content: "\f104";
+}
+
+html[dir="rtl"] .footer-contact-list li {
+    flex-direction: row;
+    text-align: right;
+}
+
+html[dir="rtl"] .footer-socials {
+    justify-content: flex-start;
+}
+
+html[dir="rtl"] .footer-bottom-container {
+    direction: rtl;
+}
+
+/* =====================================================
+   TABLET RESPONSIVE
+===================================================== */
+
+@media (max-width: 992px) {
+
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 45px 40px;
+    }
+
+    .footer-brand {
+        max-width: 100%;
+    }
+
+    .footer-about {
+        max-width: 400px;
+    }
+
+}
+
+/* =====================================================
+   MOBILE RESPONSIVE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .footer-main {
+        padding: 55px 0 45px;
+    }
+
+    .footer-container {
+        width: calc(100% - 40px);
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .footer-brand {
+        max-width: 100%;
+    }
+
+    .footer-title {
+        margin-top: 0;
+        margin-bottom: 22px;
+    }
+
+    .footer-links {
+        gap: 13px;
+    }
+
+    .footer-contact-list {
+        gap: 16px;
+    }
+
+    .footer-bottom {
+        padding: 22px 0;
+    }
+
+    .footer-bottom-container {
+        width: calc(100% - 40px);
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+    }
+
+    .footer-bottom-links {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+}

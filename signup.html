@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sign Up | MotoFix Garage</title>
+
+    <link rel="icon" type="image/png" href="images/logo-2.png">
+
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="signup.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<main class="signup-page">
+
+    <!-- TOP CONTROLS -->
+    <div class="signup-top-controls">
+
+        <button type="button" id="themeBtn" aria-label="Toggle theme">
+            <i class="fas fa-moon"></i>
+        </button>
+
+        <button class="direction-btn" id="directionBtn"
+                        type="button" aria-label="Change direction">
+                    <i class="fas fa-arrow-right-arrow-left"></i>
+                   
+                </button>
+
+    </div>
+
+    <div class="signup-wrapper">
+
+        <!-- LEFT VISUAL SECTION -->
+        <div class="signup-visual">
+
+            <div class="signup-visual-overlay"></div>
+
+            <a href="index.html" class="signup-brand">
+                <img src="images/logo-2.png" alt="MotoFix Logo">
+                <span><strong>MotoFix</strong> Garage</span>
+            </a>
+
+            <div class="signup-visual-content">
+
+                <span class="signup-tag">
+                    <i class="fas fa-motorcycle"></i>
+                    JOIN MOTOFIX GARAGE
+                </span>
+
+                <h1>
+                    Start Your Journey
+                    <span>With Expert Care.</span>
+                </h1>
+
+                <p>
+                    Create your account and enjoy a smarter way to
+                    manage your motorcycle servicing and maintenance.
+                </p>
+
+            </div>
+
+            <div class="signup-visual-bottom">
+                <i class="fas fa-tools"></i>
+                <span>Professional Care. Reliable Performance.</span>
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT SIGNUP SECTION -->
+        <div class="signup-form-section">
+
+            <div class="signup-form-container">
+
+                <!-- MOBILE BRAND -->
+                <div class="signup-mobile-brand">
+                    <img src="images/logo-2.png" alt="MotoFix Logo">
+                    <span><strong>MotoFix</strong> Garage</span>
+                </div>
+
+                <!-- HEADING -->
+                <div class="signup-heading">
+
+                    <span class="signup-small-title">CREATE YOUR ACCOUNT</span>
+
+                    <h2>
+                        Join <span>MotoFix Garage</span>
+                    </h2>
+
+                    <p>Enter your details to get started.</p>
+
+                </div>
+
+
+                <!-- SIGNUP FORM -->
+                <form id="signupForm">
+
+                    <!-- FULL NAME -->
+                    <div class="signup-input-group">
+
+                        <label for="signupName">Full Name</label>
+
+                        <div class="signup-input-box">
+                            <i class="far fa-user"></i>
+
+                            <input
+                                type="text"
+                                id="signupName"
+                                placeholder="Enter your full name"
+                                autocomplete="name"
+                                required>
+                        </div>
+
+                    </div>
+
+
+                    <!-- EMAIL -->
+                    <div class="signup-input-group">
+
+                        <label for="signupEmail">Email Address</label>
+
+                        <div class="signup-input-box">
+                            <i class="far fa-envelope"></i>
+
+                            <input
+                                type="email"
+                                id="signupEmail"
+                                placeholder="Enter your email address"
+                                autocomplete="email"
+                                required>
+                        </div>
+
+                    </div>
+
+
+                    <!-- PHONE -->
+                    <div class="signup-input-group">
+
+                        <label for="signupPhone">Phone Number</label>
+
+                        <div class="signup-input-box">
+                            <i class="fas fa-phone"></i>
+
+                            <input
+                                type="tel"
+                                id="signupPhone"
+                                placeholder="Enter your phone number"
+                                autocomplete="tel"
+                                required>
+                        </div>
+
+                    </div>
+
+
+                    <!-- PASSWORD ROW -->
+                    <div class="signup-password-row">
+
+                        <div class="signup-input-group">
+
+                            <label for="signupPassword">Password</label>
+
+                            <div class="signup-input-box">
+                                <i class="fas fa-lock"></i>
+
+                                <input
+                                    type="password"
+                                    id="signupPassword"
+                                    placeholder="Create password"
+                                    autocomplete="new-password"
+                                    required>
+
+                                <button type="button"
+                                    class="signup-password-toggle"
+                                    data-target="signupPassword"
+                                    aria-label="Show password">
+                                    <i class="far fa-eye"></i>
+                                </button>
+                            </div>
+
+                        </div>
+
+
+                        <div class="signup-input-group">
+
+                            <label for="confirmPassword">Confirm Password</label>
+
+                            <div class="signup-input-box">
+                                <i class="fas fa-lock"></i>
+
+                                <input
+                                    type="password"
+                                    id="confirmPassword"
+                                    placeholder="Confirm password"
+                                    autocomplete="new-password"
+                                    required>
+
+                                <button type="button"
+                                    class="signup-password-toggle"
+                                    data-target="confirmPassword"
+                                    aria-label="Show password">
+                                    <i class="far fa-eye"></i>
+                                </button>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- TERMS -->
+                    <div class="signup-terms">
+
+                        <label>
+                            <input type="checkbox" id="signupTerms" required>
+
+                            <span>
+                                I agree to the
+                                <a href="terms.html">Terms & Conditions</a>
+                                and
+                                <a href="privacy.html">Privacy Policy</a>.
+                            </span>
+                        </label>
+
+                    </div>
+
+
+                    <!-- SUBMIT -->
+                    <button type="submit" class="signup-submit-btn">
+                        Create Account
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+
+                    <p id="signupMessage" class="signup-message"
+                       aria-live="polite"></p>
+
+                </form>
+
+
+                <!-- LOGIN LINK -->
+                <div class="signup-login-text">
+                    Already have an account?
+                    <a href="login.html">Sign In</a>
+                </div>
+
+
+                <!-- HOME LINK -->
+                <a href="index.html" class="signup-back-home">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Home
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<script>// =========================
+// THEME TOGGLE
+// =========================
+
+const themeBtn = document.getElementById("themeBtn");
+const directionBtn = document.getElementById("directionBtn");
+const htmlElement = document.documentElement;
+
+// Apply saved theme
+const savedTheme = localStorage.getItem("motofix-theme");
+
+if (savedTheme === "dark") {
+    htmlElement.classList.add("dark-mode");
+} else {
+    htmlElement.classList.remove("dark-mode");
+}
+
+function updateThemeIcon() {
+    if (!themeBtn) return;
+
+    themeBtn.innerHTML = htmlElement.classList.contains("dark-mode")
+        ? '<i class="fas fa-sun"></i>'
+        : '<i class="fas fa-moon"></i>';
+}
+
+updateThemeIcon();
+
+if (themeBtn) {
+    themeBtn.addEventListener("click", function () {
+
+        htmlElement.classList.toggle("dark-mode");
+
+        const theme = htmlElement.classList.contains("dark-mode")
+            ? "dark"
+            : "light";
+
+        localStorage.setItem("motofix-theme", theme);
+
+        updateThemeIcon();
+    });
+}
+
+
+// =========================
+// RTL / LTR TOGGLE
+// =========================
+
+const savedDirection =
+    localStorage.getItem("motofix-direction") || "ltr";
+
+htmlElement.setAttribute("dir", savedDirection);
+
+function updateDirectionIcon() {
+    if (!directionBtn) return;
+
+    // Keep SVG unchanged
+    directionBtn.setAttribute(
+        "aria-label",
+        htmlElement.getAttribute("dir") === "rtl"
+            ? "Switch to left-to-right"
+            : "Switch to right-to-left"
+    );
+}
+
+updateDirectionIcon();
+
+if (directionBtn) {
+    directionBtn.addEventListener("click", function () {
+
+        const currentDirection =
+            htmlElement.getAttribute("dir") || "ltr";
+
+        const newDirection =
+            currentDirection === "ltr" ? "rtl" : "ltr";
+
+        htmlElement.setAttribute("dir", newDirection);
+
+        localStorage.setItem("motofix-direction", newDirection);
+
+        updateDirectionIcon();
+    });
+}
+
+
+// =========================
+// SHOW / HIDE PASSWORD
+// =========================
+
+const passwordToggles =
+    document.querySelectorAll(".signup-password-toggle");
+
+passwordToggles.forEach(function (button) {
+
+    button.addEventListener("click", function () {
+
+        const targetId = button.dataset.target;
+        const passwordInput = document.getElementById(targetId);
+
+        if (!passwordInput) return;
+
+        const isPassword = passwordInput.type === "password";
+
+        passwordInput.type = isPassword ? "text" : "password";
+
+        button.innerHTML = isPassword
+            ? '<i class="far fa-eye-slash"></i>'
+            : '<i class="far fa-eye"></i>';
+
+        button.setAttribute(
+            "aria-label",
+            isPassword ? "Hide password" : "Show password"
+        );
+
+    });
+
+});
+
+
+// =========================
+// SIGNUP FORM DEMO
+// =========================
+
+const signupForm = document.getElementById("signupForm");
+
+if (signupForm) {
+
+    signupForm.addEventListener("submit", function (e) {
+
+        e.preventDefault();
+
+        const name =
+            document.getElementById("signupName").value.trim();
+
+        const email =
+            document.getElementById("signupEmail").value.trim();
+
+        const phone =
+            document.getElementById("signupPhone").value.trim();
+
+        const password =
+            document.getElementById("signupPassword").value;
+
+        const confirmPassword =
+            document.getElementById("confirmPassword").value;
+
+        const terms =
+            document.getElementById("signupTerms").checked;
+
+        const message =
+            document.getElementById("signupMessage");
+
+        message.textContent = "";
+
+        if (!name || !email || !phone || !password || !confirmPassword) {
+            message.textContent = "Please complete all required fields.";
+            return;
+        }
+
+        if (password.length < 8) {
+            message.textContent =
+                "Password must contain at least 8 characters.";
+            return;
+        }
+
+        if (password !== confirmPassword) {
+            message.textContent = "Passwords do not match.";
+            return;
+        }
+
+        if (!terms) {
+            message.textContent =
+                "Please accept the Terms & Conditions.";
+            return;
+        }
+
+        message.textContent =
+            "Your form is ready. Connect a registration backend to create your account.";
+
+    });
+
+}
+</script>
+
+</body>
+</html>
